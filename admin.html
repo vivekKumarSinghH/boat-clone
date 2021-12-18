@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin page</title>
+</head>
+<body>
+    Admin Page
+
+    <input type="text" name="" id="productname" placeholder="Enter name of product">
+    <input type="number" name="" id="productprice" placeholder="Enter Price">
+    <input type="number" name="" id="productmrp" placeholder="Enter MRP">
+    <input type="text" name="" id="imgurl" placeholder="Enter image url">
+    <input type="text" name="" id="producttype" placeholder="Product type">
+
+    <button id="submit">Submit</button>
+    <button id="toproductpage">Go to Product Page</button>
+</body>
+</html>
+
+
+<script>
+
+    var pro=JSON.parse(localStorage.getItem("productdetail"))|| []
+    
+    
+    document.querySelector("#submit").addEventListener('click',function(){
+        var pname=document.querySelector('#productname').value
+        var pprice=document.querySelector('#productprice').value
+        var pmrp=document.querySelector('#productmrp').value
+        var img=document.querySelector('#imgurl').value
+        var type=document.querySelector('#producttype').value
+
+        var disc=Math.floor(100*((pmrp-pprice)/pmrp))
+        var prodata={
+
+            name:pname,
+            price:pprice,
+            mrp:pmrp,
+            img:img,
+            type:type,
+            discount:disc,
+             
+        };
+
+        pro.push(prodata);
+        localStorage.setItem("productdetail",JSON.stringify(pro))
+
+    })
+
+
+    document.querySelector('#toproductpage').addEventListener("click",function(){
+
+        window.location.href="productpage.html"
+    })
+</script>
