@@ -13,5 +13,5 @@
 <h2>Description</h2>
 <h3>Home Page</h3>
 <p>This is the main landing page of our website. Here clicking on any products will direct the user to the respective Product Page. Clicking on Account will display an animated popup box for login and sign up. To add product in the cart user need to login first which is the part of authentication where user give his mail address and gets a OTP to signin which is done by using nodemailer.</p>
-<img src=""/>
+<img src="./Screenshot (48).png"/>
 
